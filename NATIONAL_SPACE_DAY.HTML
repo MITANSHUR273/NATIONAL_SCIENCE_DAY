@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Explorer Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1e90ff;
+        }
+
+        .puzzle-menu {
+            margin-bottom: 20px;
+        }
+
+        .puzzle-menu button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .puzzle-menu button:hover {
+            background-color: #4682b4;
+        }
+
+        #puzzle-content {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Space Explorer Challenge</h1>
+        <div class="puzzle-menu">
+            <button onclick="showPuzzle('jigsaw')">Jigsaw Puzzle</button>
+            
+        </div>
+        <div id="puzzle-content">
+            <!-- Puzzle content will be loaded here -->
+        </div>
+    </div>
+    <script>
+        function showPuzzle(puzzleType) {
+            const puzzleContent = document.getElementById('puzzle-content');
+            switch (puzzleType) {
+                
+                case 'jigsaw':
+                    puzzleContent.innerHTML = `
+                        <h2>Jigsaw Puzzle</h2>
+                        <iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=2a03cc2caa9c&amp;view=iframe" width="600" height="400"></iframe>
+                    `;
+                    break;
+                
+                
+                default:
+                    puzzleContent.innerHTML = '<p>Select a puzzle to get started.</p>';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
